@@ -93,9 +93,24 @@ class wordsGame:
       with open('{}.{}'.format(self.op, self.startTime), 'w') as outFile:
         pickle.dump(self, outFile)
 
+    def __str__(self):
+      outString = ""
+      i = 0
+      col = 7
+      outString += "Tiles:"
+      for letter in string.ascii_lowercase+'-':
+        if not i % col:
+          outString += "\n"
+        count = self.tiles[letter][0]
+        if count:
+          outString += "{}:{}   ".format(letter, count)
+        else:
+          outString += "      "
+        i+=1
 
+      outString += "\nLetters Played"
+      outString += "\nMe: {}".format(self.play_dict['me']['tiles'])
+      outString += "\n{}: {}".format(self.op, self.play_dict['op']['tiles'])
 
-#game = Game('randy')
-#game.move('me','ae', 2)
-#game.move('op', 'quiz', 22)
-#game.end()
+      return outString
+      
