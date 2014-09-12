@@ -1,1 +1,1 @@
-from tilepile import TilePile as tp
+from tilepile import TilePile
