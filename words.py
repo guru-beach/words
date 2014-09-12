@@ -54,10 +54,10 @@ class wordsGame:
       self.startTime = int(time.time())
       self.tiles = init_tiles()
       self.op = player
-      self.play_dict = {'me': { 'tiles' : [], 'score' : 0},
-                        'op': { 'tiles' : [], 'score' : 0}}
+      self.play_dict = {'me': { 'tiles' : [], 'score' : 0.0},
+                        'op': { 'tiles' : [], 'score' : 0.0}}
 
-    def move(self, side, letters, score=0):
+    def move(self, side, letters, score=0.0):
       """Does an actual player move.   Score is optional
       INPUT: side in ['me', 'op'] (op is short for oppenent)
       INPUT: letters in ['lowercase', '--'] (- is blank)
@@ -95,8 +95,8 @@ class wordsGame:
       """
       avgs = []
       for player in ['me', 'op']:
-        avg = 0
-        sum = 0
+        avg = 0.0
+        sum = 0.0
         score = self.play_dict[player]['score']
         tiles = self.play_dict[player]['tiles']
         for tile in tiles:
