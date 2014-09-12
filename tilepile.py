@@ -1,10 +1,10 @@
-# words.py
+# tilepile.py
 # Creates a text based tile pile for Words with Friends
 #
 # Typical usage:
 #
-# import words
-# randy = words.wordsGame('Randy')
+# from tilepile import TilePile as tp
+# randy =tp('Randy')
 # randy.move('me', 'ah' 5)
 # randy.move('op', 'ha', 15)
 # print randy
@@ -45,7 +45,7 @@ def init_tiles():
                   }
   return initial_tiles
 
-class wordsGame:
+class TilePile(object):
     
     def __init__(self, player):
       """Starts a Words with Friends 'tile pile' interface
