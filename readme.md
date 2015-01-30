@@ -15,3 +15,9 @@ autoclave
 autolyse
 autolysed
 ```
+
+
+You can run find_words on your iPhone, though it's a little trickier than on a computer.  Currently the easiest way is:
+
+1.  Get Python 2.7 from the appstore
+2.  Clone this repo somewhere locally
