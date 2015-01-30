@@ -1,3 +1,30 @@
+# find_words.py
+# I run into people playing many, many rare words.  Maybe my vocabulary just sucks, 
+# but in case they are cheating, I built my own weapons to combat with :)  Sure, there's
+# a ton of these online, I just wanted the challenge.   Feel free to comment on
+# the algorithm, it could probably use some improvements.
+# 
+# Running from command line you pass the letters you have in your hand as well
+# as an optional max word length.  You can always add other letters from the board
+# to explore other possibilities.   
+#
+# GOOD MATCHES takes into account multiple occurences of letters, 
+#  
+# [jake@megatron] python find_words.py aeefthd 9
+# deathful
+# faithed
+# fathead
+# fatheads
+# fathered
+# fathomed
+# flathead
+# hafted
+# shafted
+# softhead
+# *** GOOD MATCHES ***
+# fathered
+
+
 import sys
 import re
 import urllib2
@@ -69,11 +96,21 @@ def find_matches(instring, max_length):
   for match in good_matches:
     print match
 
+def usage():
+  print """usage: python find_words.py <letters> [max_word_length]
+  e.g. python find_words.py aeefthd 10"""
+
+def main():
+  global max_length
+  args=len(sys.argv)
+  if args > 1: 
+    instring = sys.argv[1]
+  else:
+    print "Need something to parse"
+    usage()
+  if args > 2:
+    max_length = int(sys.argv[2])
+  find_matches(instring, max_length)
 
 if __name__ == '__main__':
-  instring = sys.argv[1]
-  try:
-    max_length = int(sys.argv[2])
-  except:
-    pass
-  find_matches(instring, max_length)
+  main()
