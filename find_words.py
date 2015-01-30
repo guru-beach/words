@@ -108,6 +108,7 @@ def main():
   else:
     print "Need something to parse"
     usage()
+    sys.exit()
   if args > 2:
     max_length = int(sys.argv[2])
   find_matches(instring, max_length)
