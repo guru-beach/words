@@ -79,7 +79,7 @@ def is_good_match(line, regex_list):
   return True
 
 #print instring
-def find_matches(instring, max_length):
+def find_matches(instring, max_length=max_length):
   # Takes in a string, usually a WWF tile entry, and looks for possible matches
   # In an ENABLE dictionary file
   good_matches = []
